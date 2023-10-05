@@ -11,7 +11,7 @@ fs.readFile("./data.json", "utf8", (err, jsonstring) => {
         }
     });
     const filteredData = necessaryData.filter(item => item !== undefined);
-    const finalString = JSON.stringify(filteredData);
+    const finalString = filteredData.join('\n');
     fs.writeFile("output.txt", finalString, (err) => {
         if (err) {
             console.log("File write failed",err);
